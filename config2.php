@@ -9,16 +9,16 @@
 $username = "root";
 $password = "";
 $hostname = "localhost";
-$database = "pdbdorg_macc_englishmedium";
+$database = "";
 
 //Define your canonical domain including trailing slash!, example:
 $domain= "";
 
 //Define sending email notification to webmaster
 
-$email='syam.csse@gmail.com';
+$email='';
 $subject='New user registration notification';
-$from='From: www.isms.pdbd.org';
+$from='';
 
 //Define Recaptcha parameters
 $privatekey ="6LcUquISAAAAAONVSSjZ-njky8wE4RzqHDoWwwTY";
