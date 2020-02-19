@@ -333,21 +333,15 @@ $db = new myDatabase($user_db_select);
 function get_user_database($user)
 {
 
-    if($user == 'josephac1')
+     if($user == '') //first four letter of admin's username
     {
-       $r = "pdbdorg_macc_englishmedium";
-    }elseif($user == 'josephac2')
+       $r = ""; //define database name
+    }elseif($user == '')//first four letter of admin's username
     {
-       $r = "pdbdorg_macc_englishmedium";
-    }elseif($user == 'josephac3')
+       $r = ""; //define database name
+    }elseif($user == '')//first four letter of admin's username
     {
-       $r = "pdbdorg_macc_englishmedium";
-    }elseif($user == 'josephac4')
-    {
-       $r = "pdbdorg_macc_englishmedium";
-    }elseif($user == 'admincontrol')
-    {
-       $r = "pdbdorg_macc_englishmedium";
+       $r = ""; //define database name
     }
     
   return $r ;
