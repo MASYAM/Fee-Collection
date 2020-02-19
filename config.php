@@ -21,8 +21,8 @@ $subject='New user registration notification';
 $from='';
 
 //Define Recaptcha parameters
-$privatekey ="6LcUquISAAAAAONVSSjZ-njky8wE4RzqHDoWwwTY";
-$publickey = "6LcUquISAAAAALopKvD0p0bPAt0jP79ZeSteR1e5";
+$privatekey ="";
+$publickey = "";
 
 //Define length of salt,minimum=10, maximum=35
 $length_salt=15;
