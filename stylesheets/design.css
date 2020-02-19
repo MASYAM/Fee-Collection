@@ -1,0 +1,371 @@
+
+html { height: 100%; width: 100%; }
+body { min-width:1000px; height: 97%; width: 100%; margin: 0; padding: 0; border: 0;
+       background: whitesmoke;
+      /* background: -moz-linear-gradient(top,#154360 2%,#fafbfb 25%,white 40%);
+       background: -webkit-linear-gradient(top,#154360 2%,#fafbfb 25%,white 40%);
+       background: -o-linear-gradient(top,#154360 2%,#fafbfb 25%,white 40%);
+       background: -ms-linear-gradient(top,#154360 2%,#fafbfb 25%,white 40%);*/
+       filter:none;
+       font-family: calibri; }
+img { border: none; }
+table, tr, td, tr { text-align:center;border-collapse: collapse; vertical-align: top; }
+
+
+/*------Header Navigation-----*/
+#header_nav { 
+    float:left;
+	margin-left:4%;
+	margin-top:5px;
+    height: 5%;
+    width: 30%;
+    font-family:Nirmala UI;
+    font-size:13px; 
+    font-weight: bold;
+    background: transparent  ;
+	border:2px solid #00cc00;
+	
+	border-radius:10px;
+	
+}
+.header_nav_link{
+    color:#000; 
+    text-decoration:none;
+}
+.header_nav_link:hover{
+    color:#ff9900;
+    
+}
+.header_nav_link:active{
+    color:lavender;
+    text-decoration:underline;
+}
+
+.selected_header_nav_link{
+    
+    color:blue;
+    font-weight: bold;
+    text-decoration:none;
+}
+
+/* Note: IE 5 & 6 won't understand min-height */
+/*------Main Content-----*/
+#main { height: 93%; width: 100%; float: left; }
+
+#main_content_nav{
+    width:94%;
+    height:5%;
+    margin: 5px auto 5px auto;
+    padding:5px 0 0 30px;
+	
+}
+
+#main_content{
+    width:96%;
+    height:88%;
+    border-radius: 0px;
+    margin: 0 auto 0px auto;
+    border:2.2px solid red;
+    border-radius: 20px;
+    border-bottom-width: 2.2px;
+    border-bottom-color: red;
+    background:transparent;   
+    overflow: auto;
+}
+
+/*-------Main Content Navigation-------*/
+.main_content_link{
+    width: 30px;
+    height:20px;
+    padding: 3px 11px 7px 11px;
+    text-decoration: none;
+    font-family: calibri;
+    font-size: 13px;
+    font-weight: bold;
+    color: #000 ;
+    border-radius: 10px;
+    border:1.5px solid #0066ff;
+    background:#fff;
+   
+  }  
+.main_content_link:hover{
+    color:#fff;
+    background:orange;
+	border:1.5px solid orange;
+   /* background: -moz-linear-gradient(bottom,#00c4f2 12%,#fafbfb 25%,white 40%);
+    background: -webkit-linear-gradient(top,#00c4f2 10%,#fafbfb 25%,white 40%);
+    background: -ms-linear-gradient(top,#00c4f2 10%,#fafbfb 25%,white 40%);
+    background: -o-linear-gradient(top,#00c4f2 10%,#fafbfb 25%,white 40%); */
+    
+   text-decoration: none;
+   cursor: pointer;
+   
+}
+.selected_main_content_link{
+    width: 30px;
+    height:20px;
+    padding: 3px 11px 7px 11px;
+    text-decoration: none;
+    font-family: calibri;
+    font-size: 13px;
+    font-weight: bold;
+    border-radius: 10px;
+    border:1.5px solid blue;
+    color: #fff;
+	background:blue;
+   /* background: -moz-linear-gradient(top,orange 10%,#fafbfb 25%,white 40%);
+    background: -webkit-linear-gradient(top,orange 10%,#fafbfb 25%,white 40%);
+    background: -ms-linear-gradient(top,orange 10%,#fafbfb 25%,white 40%);
+    background: -o-linear-gradient(top,orange 10%,#fafbfb 25%,white 40%); */
+    /*text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;*/
+
+}
+/*------End of Main Content-----*/
+
+
+.tableRoundBorder {
+    border: 1px solid #CCCCCC;
+    border-radius: 6px 6px 6px 6px;
+    -moz-border-radius: 6px 6px 6px 6px;
+    -webkit-border-radius: 6px 6px 6px 6px;
+    box-shadow: 0 1px 1px #CCCCCC;
+}
+
+#footer {
+    height: 0%; 
+    width: 100%;
+    text-align: right; 
+    background: transparent;  
+    float: left; 
+    color: #ccc;
+    font-size: 11px;
+    line-height: 11px;
+}
+
+
+#message {
+	font-family:calibri;
+	text-align:center;
+	margin-bottom:20px;
+	background: rgba(0,0,0,.1);
+}
+
+#submit_button {
+    text-decoration:none ;	      
+    width: 90px;
+    height: 25px;
+    border:1px solid rgba(0,0,0,.2);
+	border-radius:10px;
+    background: #0066ff;
+    padding:0px;
+
+    font-family:Candara;
+    font-size: 13px;
+    font-weight:bold;
+    line-height:17px;
+    color: #fff;    	
+    }
+		
+#submit_button:hover {
+    color:#000;
+    background:#ffcc00;
+    cursor:pointer;
+		
+    }
+#submit_button:active {
+	color:#00FFFF;	
+	background: #000 ;
+	cursor:pointer;
+    }
+    
+#submit_button2 {
+    text-decoration:none ;	      
+    width: 120px;
+    height: 35px;
+    border:1px solid rgba(0,0,0,.2);
+    background:darkcyan;
+    padding:0px;
+
+    font-family:Candara;
+    font-size: 13px;
+    font-weight:bold;
+    line-height:17px;
+    color: #fff;    	
+    }    
+#submit_button2:hover {
+    color:#000;
+    background:#ffcc00 ;
+    cursor:pointer;
+		
+    }
+#submit_button2:active {
+	color:#00FFFF;	
+	background: #000 ;
+	cursor:pointer;
+    }
+
+#submit_button_disabled {
+	text-decoration:none ;	    
+	float:left;	
+			
+    display: block;
+    position: relative;
+    width: 110px;
+    height: 25px;
+    border:1px solid rgba(0,0,0,.2);
+    box-shadow:  0 0 10px rgba(0,0,0,.1) inset;
+    background: rgb(216,216,216) ;
+    padding:0px;
+
+    font-family:Candara;
+    font-size: 13px;
+	font-weight:bold;
+    line-height: 24px;
+    color: rgba(0,0,0,.5); 
+}
+
+#text_box{
+    width:220px;
+    height:22px;
+    border:2px solid green;
+}
+
+#student_identity{
+    width:450px;height:80px;margin:15px auto;
+	border:2px solid #990099;
+	border-radius:15px;
+    /*background: lightgray;
+    background:linear-gradient(top,#faf9f9 98.5%,#ccc 1.5%);
+    background:-webkit-linear-gradient(top,#faf9f9 98.5%,#ccc 1.5%);
+    background:-moz-linear-gradient(top,#faf9f9 98.5%,#ccc 1.5%);
+    background:-o-linear-gradient(top,#faf9f9 98.5%,#ccc 1.5%);*/
+    overflow: auto;
+}
+
+#sumit_area{
+    width:700px;height:200px;margin:auto;    
+    overflow: auto;
+}
+
+#receipt{
+    width:700px;
+    height:80%;
+    margin:10px auto;
+    border:1px solid #0099CC;
+    overflow: auto;
+}
+
+#set_regular_due{
+    width:300px;height:70px;margin:auto;
+    background: lightgray;
+    background:linear-gradient(top,#faf9f9 98%,#ccc 2%);
+    background:-webkit-linear-gradient(top,#faf9f9 98%,#ccc 2%);
+    background:-moz-linear-gradient(top,#faf9f9 98%,#ccc 2%);
+    background:-o-linear-gradient(top,#faf9f9 98%,#ccc 2%);
+    overflow: auto;
+}
+
+
+.tr1_hover {   
+    background:aliceblue;
+    font-family:calibri;
+}
+.tr2_hover {
+    background:#dcf2f2;
+    font-family:calibri; 
+}
+
+
+/*Scroll bar Design*/
+
+::-webkit-scrollbar {
+    width: 20px;
+    height: 15px;   
+	
+	border-radius: 20px;
+}
+::-webkit-scrollbar-corner {
+/*background-image:url(http://help.apple.com/mobileme/images/corner.png);
+background-repeat:no-repeat;*/
+background-color:transparent;
+} 
+::-webkit-scrollbar-track {
+    border-color: #009999 /*transparent*/ ;
+	border-radius: 20px;
+      /*-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);*/
+} /* the new scrollbar will have a flat appearance with the set background color */
+::-webkit-scrollbar-thumb {
+      border-color:#F1C40F   ;
+      border:2px solid #00cc00;
+	  border-radius: 20px;
+} /* this will style the thumb, ignoring the track */
+ /* optionally, you can style the top and the bottom buttons (left and right for horizontal bars) */
+ ::-webkit-scrollbar-thumb:hover {
+      background-color: #86b300;
+      border:1px solid #ffd83d;
+	  border-radius: 20px;
+}
+::-webkit-scrollbar-corner {
+      background-color: transparent;
+} /* if both the vertical and the horizontal bars appear, then perhaps the right bottom corner also needs to be styled */
+
+
+
+/*End of Scroll bar Design*/
+
+
+/*-------------select tag style-------------*/
+
+select{
+      -webkit-appearance: button;
+      -webkit-border-radius: 3px;
+      -webkit-box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1);
+      -webkit-padding-end: 20px;
+      -webkit-padding-start: 10px;
+      -webkit-user-select: none;
+     /* background-image: url(../images/dwn_arrow.png), 
+      -webkit-linear-gradient(DarkGray, #FFF 50%, #FFF); */
+
+      background-position: center right;
+      background-repeat: no-repeat;
+      border: 1.5px solid #996600;
+	  background:#cc9900;
+	  border-radius:10px;
+      color: #fff;
+      font-size: 90%;
+      font-family:calibri;
+      font-weight: bold;
+      margin: 0;
+      overflow: hidden;
+      padding-top: 1px;
+      padding-bottom: 1px;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      height:25px; 
+      cursor:pointer;
+    }
+
+@-moz-document url-prefix() {
+    select{  
+             
+        border-radius: 3px;      
+        background:-moz-linear-gradient(DarkGray, #FFF 50%, #FFF); 
+        border: 1px solid #CCC;
+        color: #000;
+        font-size: 90%;
+        font-family:Comfortaa, Arial, Helvetica, sans-serif;
+        margin: 0;
+        padding:2px;
+        height:25px; 
+        cursor:pointer;
+    }
+}
+
+.div_opt_main_subject {
+	height:60px;
+	float:left;
+	background: -webkit-linear-gradient(DarkGray, #FFF 50%, #FFF);
+}
+
+
+/*-------------End of select tag style-------------*/
