@@ -1,8 +1,8 @@
 # Fee-Collection
 
 1. Connect Database
-Create a database at MySQL name 'fee_collection' then import fee_collection.sql
-Create another database at MySQL name 'fee_collection_users' then import fee_collection_users.sql
+/nCreate a database at MySQL name 'fee_collection' then import fee_collection.sql
+/nCreate another database at MySQL name 'fee_collection_users' then import fee_collection_users.sql
 
 2. Login
 Username: admincontrol
