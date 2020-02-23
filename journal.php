@@ -18,10 +18,11 @@ require 'includes/functions2.php';
 
                 if(isset($_POST['submit']))
                 {
-                     $date = mysql_real_escape_string($_POST['date']);                     
+                     $date = $_POST['date'];
                      $explode_date = explode("/", $date);                     
                      $rearrange_date = $explode_date[2].'-'.$explode_date[0].'-'.$explode_date[1] ;
-                     if($db->find_by_sql("*","transaction_archive","date='$rearrange_date'","") == 'No Result Found')
+                   
+                    if($db->find_by_sql("*","transaction_archive","date='".$rearrange_date."'","") == 'No Result Found')
                      {
                           echo '<div style="padding: 20px;margin:auto;width: 500px;height:30px;"></div>
                                <div id="message" ><b>No Result Found</b></div>';

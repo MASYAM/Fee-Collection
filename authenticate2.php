@@ -224,7 +224,7 @@ if (!$_SESSION['logged_in2'])
                         <div style="width:350px;height:200px;padding:10px; border:1.5px solid #6700AA;border-radius:10px; margin:20px auto;"> 
 						   
 						   <div style="width: 250px;height:35px;margin:10px auto;text-align:center;color:#ff3300;">
-                              <span style="font-weight:bold;font-size:20px;">AUTHORIZE LOGIN (Eng Med.)</span>
+                              <span style="font-weight:bold;font-size:20px;">AUTHORIZE LOGIN (SETUP)</span>
                            </div>
 						<form action="" method="POST">
 						

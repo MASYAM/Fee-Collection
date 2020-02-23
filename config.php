@@ -9,7 +9,7 @@
 $username = "root";
 $password = "";
 $hostname = "localhost";
-$database = "<database_name>";
+$database = "fee_collection_users";
 
 //Define your canonical domain including trailing slash!, example:
 $domain= "";
@@ -17,7 +17,7 @@ $domain= "";
 //Define sending email notification to webmaster
 
 $email='';
-$subject='New user registration notification';
+$subject='';
 $from='';
 
 //Define Recaptcha parameters
@@ -41,10 +41,10 @@ $sessiontimeout=7200;
 
 //DO NOT EDIT ANYTHING BELOW!
 
-$dbhandle = mysql_connect($hostname, $username, $password)
+$dbhandle = mysqli_connect($hostname, $username, $password, $database)
  or die("Unable to connect to MySQL");
-$selected = mysql_select_db($database,$dbhandle)
-or die("Could not select $database");
+$selected = mysqli_select_db($dbhandle,$database)
+  or die("Could not select $database");
 $loginpage_url= $domain.'/';
 $forbidden_url= $domain.'/403forbidden.php';
 ?>

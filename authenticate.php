@@ -105,9 +105,9 @@ if ((isset($_POST["pass"])) && (isset($_POST["user"])) && ($_SESSION['LAST_ACTIV
     //user is not yet registered
 
     $registered=FALSE;
-      print("Registration Not Found");
+      //print("Registration Not Found");
   }else{
-      print("Registration Found");
+      //print("Registration Found");
   }
  
 if ($registered==TRUE) 
@@ -318,7 +318,7 @@ if (!$_SESSION['logged_in']):
 					<div  style="width:500px;height:250px;border:3px solid #ff3300;border-radius:10px;margin:200px auto 0 auto;">
 						<div style="width:400px;margin:20px auto 40px auto;">
                                                     
-                           <span style="color:Blue;font-size:26px;font-weight:bold;">&nbsp; Micro Accounts (English Med.)</span>
+                           <span style="color:Blue;font-size:26px;font-weight:bold;">&nbspFee Collection</span>
 						   
 						</div>
                                             

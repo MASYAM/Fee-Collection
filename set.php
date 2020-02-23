@@ -19,7 +19,7 @@ $available_section   = $db->find_by_sql("section","section ORDER BY section ASC"
        if($_GET['subcat'] == 'Setup regular due') 
        { 
            require 'authenticate2.php';
-           $db->select_db("pdbdorg_macc_englishmedium");
+           $db->select_db("fee_collection");
             
                 if($available_section !== 'No Result Found')
                 {                    
