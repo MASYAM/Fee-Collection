@@ -10,7 +10,7 @@ Password: abc12345
 //You can create your own password via sha256.php file.
 
 3. Dummy Data: 
-I put some dummy data in database sothat you can see how this project works.
+I put some dummy data in database sothat you can see how this project works. You can view data for the year '2020' and month 'February'
 
 4. WorkFlow: 
 Setup (Add student via CSV or Form, Set regular due).
