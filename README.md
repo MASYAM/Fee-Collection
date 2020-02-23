@@ -17,3 +17,6 @@ Setup (Add student via CSV or Form, Set regular due).
 Home(student id "SJI19-3C-115", Pay, Receipt).
 Journal(View transaction detail by daily,monthly,yearly).
 Excel Report(Works in WINDOWS OS).
+
+5. SCREENSHOTS
+You can take a look at screenshots for quick view
