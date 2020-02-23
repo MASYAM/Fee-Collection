@@ -111,9 +111,9 @@ function monthly_payment_status($student_id,$year)
      $r .= '<div style="text-align:center;border:1.5px solid transparent;height:23px;padding:10px 0 0 0;width:300px;margin:auto;">';
      $r .= '<b>Payment Status (Year:</b>'.$current_year.')';
      $r .= '</div>';
-     $r .= '<div style="border:1.5px solid #86b300;padding:0px 10px 10px 10px;height:150px;width:90%;margin:15px auto;overflow:auto;border-radius:20px;">';
+     $r .= '<div style="border:1.5px solid #000;padding:0px 10px 10px 10px;height:150px;width:90%;margin:15px auto;overflow:auto;border-radius:20px;">';
 	 
-      $r .= '<table style="margin:18px auto;font-size:14px;border:1px solid #86b300;" cellpadding="3" border="1">';
+      $r .= '<table style="margin:18px auto;font-size:14px;border:1px solid gray;" cellpadding="3" border="1">';
       $r .= '<tr>';
       foreach ($months as $value)
       {

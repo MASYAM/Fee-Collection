@@ -130,7 +130,7 @@ function daily_transaction_pagination($date)
 	
 	$targetpage = "journal.php?category=Journal&&subcat=Daily Transaction";
         $limit = 15;
-        $total_pages = count($db->find_by_sql("*","transaction_archive","date='$date'",""));
+    $total_pages = count($db->find_by_sql("*","transaction_archive","date='".$date."'",""));
         $pagination = pagination($total_pages,$targetpage,$limit,$section_name,$date,$year,$month,$full_month);
 
 if($_GET['page'] > $pagination[1])
@@ -138,10 +138,11 @@ if($_GET['page'] > $pagination[1])
        echo '<div id="message" style="font-size:16px;color:#FF9999;"><b>No Result Found</b></div>';
     }else{
         	/* Get data. */
-	$sql = "SELECT * FROM transaction_archive WHERE date='$date' ORDER BY id DESC LIMIT $pagination[2],$pagination[3]";
+        $sql = "SELECT * FROM transaction_archive WHERE date='".$date."' ORDER BY id DESC LIMIT ".$pagination[2].",".$pagination[3]."";
         
     //code for data show    
-        $result = mysql_query($sql);
+        $result = $db->query($sql);
+      
     echo '<div style="width:95%;height:445px;margin:1% auto 1% auto;" overflow:auto;>';
     echo '<div class="dr_moz_scrll" style="width:650px; height:430px; margin:10px auto 10px auto; overflow:auto; border:1.5px solid #86b300;border-radius:10px;" >' ;
           echo '<table table style=" text-align:center; background:whitesmoke;" >' ;
@@ -155,7 +156,7 @@ if($_GET['page'] > $pagination[1])
                echo '<th style="padding:4px;">Exchange</th>' ;
             echo '</tr>';
           $i =0;
-          while ($row = mysql_fetch_array($result))
+          while ($row = $db->fetch_array($result))
           {              
               echo $r .= '<tr ';
               if($i%2 == 0)
@@ -466,15 +467,15 @@ if(htmlspecialchars($_GET['page']) > $pagination[1])
     echo '<div style="width:98%;height:445px;margin:1% auto 1% auto;overflow:auto;">';
     echo '<div class="dr_moz_scrll" style="width:98%; height:460px; float:left; margin:0 0 10px 0; overflow:auto; border:1.5px solid #86b300;border-radius:10px;" >' ;
           echo '<table style=" text-align:center;background:whitesmoke;" >' ;
-           echo '<tr style="background:gray;color:#fff;">' ;
+           echo '<tr style="background:#526e01;color:#fff;">' ;
                 echo '<th style="width:200px;padding:2px;">Date</th>' ;
             foreach ($receipt_items as $receipt_value)
             {
-                echo '<th style="width:200px;padding:2px;border:1px solid #fff;">'.$receipt_value['item'].'</th>' ;
+                echo '<th style="width:200px;padding:2px;border:1px solid #000;">'.$receipt_value['item'].'</th>' ;
             }
             foreach ($extra_added_items as $extra_items_value)
             {
-                echo '<th style="width:200px;padding:2px;border:1px solid #fff;">'.$extra_items_value['item'].'</th>' ;
+                echo '<th style="width:200px;padding:2px;border:1px solid #000;">'.$extra_items_value['item'].'</th>' ;
             }
            echo '</tr>';
           $i =0;
