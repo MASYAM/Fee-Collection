@@ -27,6 +27,7 @@ require 'includes/functions2.php';
                           echo '<div style="padding: 20px;margin:auto;width: 500px;height:30px;"></div>
                                <div id="message" ><b>No Result Found</b></div>';
                      }else{
+                         
                        echo daily_transaction_pagination($rearrange_date);
                      }
                 }elseif($_GET['date'])
@@ -41,7 +42,7 @@ require 'includes/functions2.php';
                        echo daily_transaction_pagination($date);
                      }
            }else{
-                    date_default_timezone_set('Asia/Dhaka');
+                    date_default_timezone_set('EUROPE');
                     $date = date('Y-m-d') ;
                     
                     if($db->find_by_sql("*","transaction_archive","date='$date'","") == 'No Result Found')
