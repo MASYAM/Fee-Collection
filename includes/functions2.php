@@ -1,6 +1,6 @@
 <?php
 
-
+require('config.php');
 
 function date_field()
 {
@@ -327,7 +327,7 @@ if($_GET['page'] > $pagination[1])
 	$sql = "SELECT * FROM monthly_transaction WHERE year='$year' AND month='$month' ORDER BY id LIMIT $pagination[2],$pagination[3]";
         
     //code for data show    
-        $result = mysql_query($sql);
+        $result = $db->query($sql);
     echo '<div style="width:95%;height:445px;margin:1% auto 1% auto;">';
 
     echo '<div class="dr_moz_scrll" style="width:850px; height:443px; margin:auto; overflow:auto; border:1.5px solid #86b300;border-radius:10px;" >' ;
@@ -340,7 +340,7 @@ if($_GET['page'] > $pagination[1])
                echo '<th style="padding:4px;">Exchange</th>' ;
             echo '</tr>';
           $i =0;
-          while ($row = mysql_fetch_array($result))
+          while ($row = $db->fetch_array($result))
           {              
               echo $r .= '<tr ';
               if($i%2 == 0)
@@ -466,7 +466,7 @@ if(htmlspecialchars($_GET['page']) > $pagination[1])
     echo '<div style="width:98%;height:445px;margin:1% auto 1% auto;overflow:auto;">';
     echo '<div class="dr_moz_scrll" style="width:98%; height:460px; float:left; margin:0 0 10px 0; overflow:auto; border:1.5px solid #86b300;border-radius:10px;" >' ;
           echo '<table style=" text-align:center;background:whitesmoke;" >' ;
-           echo '<tr style="background:#86b300;color:#fff;">' ;
+           echo '<tr style="background:gray;color:#fff;">' ;
                 echo '<th style="width:200px;padding:2px;">Date</th>' ;
             foreach ($receipt_items as $receipt_value)
             {
