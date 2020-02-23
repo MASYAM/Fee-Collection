@@ -294,7 +294,7 @@ if($_GET['subcat'] == 'Monthly Fee')
                                             echo '<div id="report" style="display:none;">';
                                                        
                                                         echo '<div style="width:550px;height:90%;margin:20px auto 0 auto;font-family:calibri;">';
-                                                           echo '<div style="width:450px;height:110px;margin:auto;font-size:20px;text-align:center;" ><img src="images/sjs_logo1.png" style="float:left;"  width="60px" height="60px" ><b>ST. JOSEPH INTERNATIONAL SCHOOL<br><span style="font-size:12px;">97,Asad Avenue,Mohammadpur,Dhaka-1207</span></b></div>';
+                                                           echo '<div style="width:450px;height:110px;margin:auto;font-size:20px;text-align:center;" ><img src="images/demo_logo.png" style="float:left;"  width="60px" height="60px" ><b>DEMO INTERNATIONAL SCHOOL<br><span style="font-size:12px;">Demo Address</span></b></div>';
                                                            echo '<div style="width:545px;height:70px;font-size:14px;margin:auto;text-align:left;" ><b>Student Id: </b>'.$student_id.' &nbsp; &nbsp; <b>Class Roll: </b>'.$student_info[0]['class_roll'].'<br><br><b>Name: </b>'.$student_info[0]['student_name'].' &nbsp; &nbsp; <b>Section: </b>'.$section.'</div>';
                                                            echo '<table  style="font-family:calibri;font-size:14px;margin:10px auto;border:1px solid black;border-collapse: collapse;border-radius:3px;" border="1" cellpadding="1">';
                                                               echo '<tr>';
@@ -490,7 +490,7 @@ elseif($_GET['subcat'] == 'Monthly Due Fee')
                                             echo '<div id="report" style="display:none;">';
                                                        
                                                         echo '<div style="width:550px;height:90%;margin:20px auto 0 auto;font-family:calibri;">';
-                                                           echo '<div style="width:450px;height:110px;margin:auto;font-size:20px;text-align:center;" ><img src="images/sjs_logo1.png" style="float:left;"  width="60px" height="60px" ><b>ST. JOSEPH INTERNATIONAL SCHOOL<br><span style="font-size:12px;">97,Asad Avenue,Mohammadpur,Dhaka-1207</span></b></div>';
+                                                           echo '<div style="width:450px;height:110px;margin:auto;font-size:20px;text-align:center;" ><img src="images/demo_logo.png" style="float:left;"  width="60px" height="60px" ><b>DEMO INTERNATIONAL SCHOOL<br><span style="font-size:12px;">Demo Address</span></b></div>';
                                                            echo '<div style="width:545px;height:70px;font-size:14px;margin:auto;text-align:left;" ><b>Student Id: </b>'.$student_id.' &nbsp; &nbsp; <b>Class Roll: </b>'.$student_info[0]['class_roll'].'<br><br><b>Name: </b>'.$student_info[0]['student_name'].' &nbsp; &nbsp; <b>Section: </b>'.$section.'</div>';
                                                            echo '<table  style="font-family:calibri;font-size:14px;margin:10px auto;border:1px solid black;border-collapse: collapse;border-radius:3px;" border="1" cellpadding="2">';
                                                               echo '<tr>';
@@ -710,7 +710,7 @@ elseif($_GET['subcat'] == 'Other Fee')
                                             echo '<div id="report" style="display:none;">';
                                                        
                                                         echo '<div style="width:550px;height:90%;margin:20px auto 0 auto;font-family:calibri;">';
-                                                           echo '<div style="width:450px;height:110px;margin:auto;font-size:20px;text-align:center;" ><img src="images/sjs_logo1.png" style="float:left;"  width="60px" height="60px" ><b>ST. JOSEPH INTERNATIONAL SCHOOL<br><span style="font-size:12px;">97,Asad Avenue,Mohammadpur,Dhaka-1207</span></b></div>';
+                                                           echo '<div style="width:450px;height:110px;margin:auto;font-size:20px;text-align:center;" ><img src="images/demo_logo.png" style="float:left;"  width="60px" height="60px" ><b>DEMO INTERNATIONAL SCHOOL<br><span style="font-size:12px;">Demo Address</span></b></div>';
                                                            echo '<div style="width:545px;height:70px;font-size:14px;margin:auto;text-align:left;" ><b>Student Id: </b>'.$student_id.' &nbsp; &nbsp; <b>Class Roll: </b>'.$student_info[0]['class_roll'].'<br><br><b>Name: </b>'.$student_info[0]['student_name'].' &nbsp; &nbsp; <b>Section: </b>'.$section.'</div>';
                                                            echo '<table  style="font-family:calibri;font-size:14px;margin:10px auto;border:1px solid black;border-collapse: collapse;border-radius:3px;" border="1" cellpadding="2">';
                                                               echo '<tr>';
@@ -883,7 +883,7 @@ elseif($_GET['subcat'] == 'Old Student Fee')
                                                echo '<div id="report" style="display:none;">';
 
                                                            echo '<div style="width:550px;height:90%;margin:20px auto 0 auto;font-family:calibri;">';
-                                                              echo '<div style="width:450px;height:110px;margin:auto;font-size:20px;text-align:center;" ><img src="images/sjs_logo1.png" style="float:left;"  width="60px" height="60px" ><b>ST. JOSEPH INTERNATIONAL SCHOOL<br><span style="font-size:12px;">97,Asad Avenue,Mohammadpur,Dhaka-1207</span></b></div>';
+                                                              echo '<div style="width:450px;height:110px;margin:auto;font-size:20px;text-align:center;" ><img src="images/demo_logo.png" style="float:left;"  width="60px" height="60px" ><b>DEMO INTERNATIONAL SCHOOL<br><span style="font-size:12px;">Demo Address</span></b></div>';
                                                               echo '<div style="width:545px;height:70px;font-size:14px;margin:auto;text-align:left;" ><b>Student Id: </b>'.$student_id.' &nbsp; &nbsp; <b>Class Roll: </b>'.$class_roll.'<br><br><b>Name: </b>'.$student_name.' &nbsp; &nbsp; <b>Section: </b>'.$section.'</div>';
                                                               echo '<table  style="font-family:calibri;font-size:14px;margin:10px auto;border:1px solid black;border-collapse: collapse;border-radius:3px;" border="1" cellpadding="2">';
                                                                  echo '<tr>';
@@ -1003,7 +1003,7 @@ elseif($_GET['subcat'] == 'Print Paid Receipt')
                                             
                                             echo '<div id="report'.$x.'"  style="display:none;">';
                                                         echo '<div style="width:550px;height:90%;margin:20px auto 0 auto;font-family:calibri;">';
-                                                           echo '<div style="width:450px;height:110px;margin:auto;font-size:20px;text-align:center;" ><img src="images/sjs_logo1.png" style="float:left;"  width="60px" height="60px" ><b>ST. JOSEPH INTERNATIONAL SCHOOL<br><span style="font-size:12px;">97,Asad Avenue,Mohammadpur,Dhaka-1207</span></b></div>';
+                                                           echo '<div style="width:450px;height:110px;margin:auto;font-size:20px;text-align:center;" ><img src="images/demo_logo.png" style="float:left;"  width="60px" height="60px" ><b>DEMO INTERNATIONAL SCHOOL<br><span style="font-size:12px;">Demo Address</span></b></div>';
                                                            echo '<div style="width:545px;height:70px;font-size:14px;margin:auto;text-align:left;" ><b>Student Id: </b>'.$student_id.' &nbsp; &nbsp; <b>Class Roll: </b>'.$student_info[0]['class_roll'].'<br><br><b>Name: </b>'.$student_info[0]['student_name'].' &nbsp; &nbsp; <b>Section: </b>'.$section.'</div>';
                                                            echo '<table  style="font-family:calibri;font-size:14px;margin:10px auto;border:1px solid black;border-collapse: collapse;border-radius:3px;" border="1" cellpadding="2">';
                                                               echo '<tr>';

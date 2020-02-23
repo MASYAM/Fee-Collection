@@ -11,15 +11,15 @@ $recaptchavalidation=TRUE;
 //Trapped brute force attackers and give them more hard work by providing a captcha-protected page
 
 $iptocheck= $_SERVER['REMOTE_ADDR'];
-$iptocheck= mysql_real_escape_string($iptocheck);
+$iptocheck= mysqli_real_escape_string($dbhandle, $iptocheck);
 
-if ($fetch = mysql_fetch_array( mysql_query("SELECT `loggedip` FROM `ipcheck_for_setup` WHERE `loggedip`='$iptocheck'"))) 
+    if ($fetch = mysqli_fetch_array( mysqli_query($dbhandle, "SELECT `loggedip` FROM `ipcheck_for_setup` WHERE `loggedip`='".$iptocheck."'")) )
   {
         //Already has some IP address records in the database
         //Get the total failed login attempts associated with this IP address
 
-        $resultx = mysql_query("SELECT `failedattempts` FROM `ipcheck_for_setup` WHERE `loggedip`='$iptocheck'");
-        $rowx = mysql_fetch_array($resultx);
+      $resultx = mysqli_query($dbhandle, "SELECT `failedattempts` FROM `ipcheck_for_setup` WHERE `loggedip`='".$iptocheck."'");
+        $rowx = mysqli_fetch_array($resultx);
         $loginattempts_total = $rowx['failedattempts'];
 
         If ($loginattempts_total>$maxfailedattempt) 
@@ -46,18 +46,12 @@ if ((isset($_POST["pass2"])) && (isset($_POST["user2"])) && ($_SESSION['LAST_ACT
 //Username and password has been submitted by the user
 //Receive and sanitize the submitted information
 
-    function sanitize($data)
-     {
-        $data=trim($data);
-        $data=mysql_real_escape_string($data);
-        return $data;
-     }
+    $user= filter_var($_POST["user2"], FILTER_SANITIZE_STRING);
+    $pass= filter_var($_POST["pass2"], FILTER_SANITIZE_STRING);
 
-    $user=sanitize($_POST["user2"]);
-    $pass= sanitize($_POST["pass2"]);
 
 //validate username
-if (!($fetch = mysql_fetch_array( mysql_query("SELECT `username` FROM `authentication_for_setup` WHERE `username`='$user'")))) 
+if (!($fetch = mysqli_fetch_array( mysqli_query($dbhandle, "SELECT `username` FROM `authentication_for_setup` WHERE `username`='".$user."'"))))
   {
     //no records of username in database
     //user is not yet registered
@@ -69,8 +63,8 @@ if ($registered==TRUE)
   {
 
     //Grab login attempts from MySQL database for a corresponding username
-    $result1 = mysql_query("SELECT `loginattempt` FROM `authentication_for_setup` WHERE `username`='$user'");
-    $row = mysql_fetch_array($result1);
+    $result1 = mysqli_query($dbhandle, "SELECT `loginattempt` FROM `authentication_for_setup` WHERE `username`='".$user."'");
+    $row = mysqli_fetch_array($result1);
     $loginattempts_username = $row['loginattempt'];
 
  }
@@ -100,8 +94,8 @@ if ($registered==TRUE)
 	
     //username is registered in database, now get the hashed password
 
-    $result = mysql_query("SELECT `password` FROM `authentication_for_setup` WHERE `username`='$user'");
-    $row = mysql_fetch_array($result);
+    $result = mysqli_query($dbhandle, "SELECT `password` FROM `authentication_for_setup` WHERE `username`='".$user."'");
+    $row = mysqli_fetch_array($result);
     $correctpassword = $row['password'];
     $salt = substr($correctpassword, 0, 64);
     $correcthash = substr($correctpassword, 64, 64);
@@ -124,12 +118,12 @@ if ($registered==TRUE)
 
                     //update login attempt records
 
-                    mysql_query("UPDATE `authentication_for_setup` SET `loginattempt` = '$loginattempts_username' WHERE `username` = '$user'");
+                mysqli_query($dbhandle, "UPDATE `authentication_for_setup` SET `loginattempt` = '".$loginattempts_username."' WHERE `username` = '".$user."'");
 
                     //Possible brute force attacker is targeting registered usernames
                     //check if has some IP address records
 
-                    if (!($fetch = mysql_fetch_array( mysql_query("SELECT `loggedip` FROM `ipcheck_for_setup` WHERE `loggedip`='$iptocheck'")))) 
+                if (!($fetch = mysqli_fetch_array( mysqli_query($dbhandle, "SELECT `loggedip` FROM `ipcheck_for_setup` WHERE `loggedip`='".$iptocheck."'"))))
                      {
 
                        //no records
@@ -137,13 +131,13 @@ if ($registered==TRUE)
 
                        $loginattempts_total=1;
                        $loginattempts_total=intval($loginattempts_total);
-                        mysql_query("INSERT INTO `ipcheck_for_setup` (`loggedip`, `failedattempts`) VALUES ('$iptocheck', '$loginattempts_total')");	
+                         mysqli_query($dbhandle, "INSERT INTO `ipcheck_for_setup` (`loggedip`, `failedattempts`) VALUES ('".$iptocheck."', '".$loginattempts_total."')");
                      } else
                           {
                             //has some records, increment attempts
 
                              $loginattempts_total= $loginattempts_total + 1;
-                             mysql_query("UPDATE `ipcheck_for_setup` SET `failedattempts` = '$loginattempts_total' WHERE `loggedip` = '$iptocheck'");
+                              mysqli_query($dbhandle, "UPDATE `ipcheck_for_setup` SET `failedattempts` = '".$loginattempts_total."' WHERE `loggedip` = '".$iptocheck."'");
                           }
             }
 
@@ -151,7 +145,7 @@ if ($registered==TRUE)
 
             if ($registered==FALSE) 
             {
-                if (!($fetch = mysql_fetch_array( mysql_query("SELECT `loggedip` FROM `ipcheck_for_setup` WHERE `loggedip`='$iptocheck'")))) 
+                if (!($fetch = mysqli_fetch_array( mysqli_query($dbhandle, "SELECT `loggedip` FROM `ipcheck_for_setup` WHERE `loggedip`='".$iptocheck."'"))))
                  {
 
                    //no records
@@ -159,13 +153,13 @@ if ($registered==TRUE)
 
                    $loginattempts_total=1;
                    $loginattempts_total=intval($loginattempts_total);
-                   mysql_query("INSERT INTO `ipcheck_for_setup` (`loggedip`, `failedattempts`) VALUES ('$iptocheck', '$loginattempts_total')");	
+                     mysqli_query($dbhandle, "INSERT INTO `ipcheck_for_setup` (`loggedip`, `failedattempts`) VALUES ('".$iptocheck."', '".$loginattempts_total."')");
                  }else 
                      {
                         //has some records, increment attempts
 
                         $loginattempts_total= $loginattempts_total + 1;
-                        mysql_query("UPDATE `ipcheck_for_setup` SET `failedattempts` = '$loginattempts_total' WHERE `loggedip` = '$iptocheck'");
+                         mysqli_query($dbhandle, "UPDATE `ipcheck_for_setup` SET `failedattempts` = '".$loginattempts_total."' WHERE `loggedip` = '".$iptocheck."'");
                      }
              }
   }else 
@@ -178,8 +172,8 @@ if ($registered==TRUE)
             $loginattempts_total=0;
             $loginattempts_username=intval($loginattempts_username);
             $loginattempts_total=intval($loginattempts_total);
-            mysql_query("UPDATE `authentication_for_setup` SET `loginattempt` = '$loginattempts_username' WHERE `username` = '$user'");
-            mysql_query("UPDATE `ipcheck_for_setup` SET `failedattempts` = '$loginattempts_total' WHERE `loggedip` = '$iptocheck'");
+          mysqli_query($dbhandle, "UPDATE `authentication_for_setup` SET `loginattempt` = '".$loginattempts_username."' WHERE `username` = '".$user."'");
+          mysqli_query($dbhandle, "UPDATE `ipcheck_for_setup` SET `failedattempts` = '".$loginattempts_total."' WHERE `loggedip` = '".$iptocheck."'");
 
             //Generate unique signature of the user based on IP address
             //and the browser then append it to session
@@ -187,7 +181,6 @@ if ($registered==TRUE)
             //To make sure it belongs to an authorized user and not to anyone else.
             //generate random salt
             function genRandomString() {
-            //credits: http://bit.ly/a9rDYd
                 $length = 50;
                 $characters = "0123456789abcdef";      
                 for ($p = 0; $p < $length ; $p++) {
@@ -214,8 +207,8 @@ if ($registered==TRUE)
             ini_set('max_execution_time', 1800); //3600 seconds = 60 minutes
             ini_set("memory_limit","1500M");
             
-            $query_welcome_message = mysql_query("SELECT welcome_message FROM authentication_for_setup WHERE username='$user' ") or die(mysql_error());
-            $result_query_welcome_message = mysql_fetch_array($query_welcome_message);
+            $query_welcome_message = mysqli_query($dbhandle, "SELECT welcome_message FROM authentication_for_setup WHERE username='".$user."' ") or die(mysql_error());
+            $result_query_welcome_message = mysqli_fetch_array($query_welcome_message);
             $welcome_message = $result_query_welcome_message['welcome_message'];
             $_SESSION['welcome_message'] = $welcome_message;
             
